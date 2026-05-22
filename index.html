@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Road to FIFA World Cup 2026 · Mi Álbum</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,400&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#06090f;--surface:#0d1421;--surface2:#131d2e;--border:#1c2a40;--gold:#f0c040;--gold2:#c89a00;--green:#22c55e;--red:#ef4444;--blue:#3b82f6;--text:#e2e8f5;--muted:#5a6a88;--have-bg:#0a2018;--have-b:#22c55e;--need-bg:#1e0808;--need-b:#ef4444;--rep-bg:#081828;--rep-b:#3b82f6;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;min-height:100vh;}
+header{position:sticky;top:0;z-index:200;background:rgba(6,9,15,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(240,192,64,.2);box-shadow:0 4px 40px rgba(0,0,0,.5);}
+.hi{max-width:1440px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px;}
+.logo{display:flex;align-items:center;gap:10px;}
+.lb{font-size:26px;}
+.lt{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--gold);line-height:1;}
+.ly{font-size:10px;color:var(--muted);letter-spacing:3px;}
+.sync-status{font-size:11px;padding:4px 10px;border-radius:20px;font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:1px;}
+.sync-ok{background:#0a2018;color:var(--green);border:1px solid var(--green);}
+.sync-err{background:#1e0808;color:var(--red);border:1px solid var(--red);}
+.sync-load{background:var(--surface2);color:var(--muted);border:1px solid var(--border);}
+.sbar{background:var(--surface);border-bottom:1px solid var(--border);}
+.si{max-width:1440px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.stat{display:flex;flex-direction:column;align-items:center;min-width:64px;}
+.sv{font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1;}
+.sl{font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
+.st .sv{color:var(--gold);} .sh .sv{color:var(--green);} .sn .sv{color:var(--red);} .sr .sv{color:var(--blue);}
+.sep{width:1px;height:36px;background:var(--border);}
+.pw{flex:1;min-width:180px;}
+.pl{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px;}
+.pb{height:6px;background:var(--border);border-radius:3px;overflow:hidden;}
+.pf{height:100%;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:3px;transition:width .6s;}
+.toolbar{max-width:1440px;margin:0 auto;padding:16px 20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.sw{flex:1;min-width:220px;position:relative;}
+.sw input{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:9px 14px 9px 38px;border-radius:8px;font-family:'Barlow',sans-serif;font-size:14px;outline:none;transition:border-color .2s;}
+.sw input:focus{border-color:var(--gold);}
+.si2{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;}
+.fg{display:flex;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:4px;}
+.fb{padding:5px 12px;border:none;border-radius:5px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;background:transparent;color:var(--muted);transition:all .15s;white-space:nowrap;}
+.fb.on{background:var(--gold);color:#000;}
+.fb:hover:not(.on){color:var(--text);}
+#album{max-width:1440px;margin:0 auto;padding:0 20px 40px;}
+.sec{margin-bottom:28px;}
+.sh2{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--border);cursor:pointer;transition:border-color .2s;margin-bottom:10px;user-select:none;}
+.sh2:hover{border-color:var(--gold);}
+.sf{font-size:24px;line-height:1;}
+.sn2{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;}
+.smb{flex:1;}
+.smt{height:3px;background:var(--border);border-radius:2px;margin-top:4px;overflow:hidden;}
+.smf{height:100%;background:var(--gold);border-radius:2px;transition:width .4s;}
+.sp{font-size:11px;color:var(--muted);}
+.sbg{font-size:11px;color:var(--muted);background:var(--surface2);padding:2px 8px;border-radius:20px;border:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-weight:600;}
+.sar{color:var(--muted);transition:transform .3s;font-size:14px;}
+.sar.col{transform:rotate(-90deg);}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(70px,1fr));gap:7px;}
+.grid.hidden{display:none;}
+.stk{aspect-ratio:2/3;border-radius:9px;border:2px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .12s,box-shadow .12s;position:relative;background:var(--surface2);gap:3px;user-select:none;padding:4px;}
+.stk:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.5);}
+.stk.have{background:var(--have-bg);border-color:var(--have-b);}
+.stk.need{background:var(--need-bg);border-color:var(--need-b);}
+.stk.repeat{background:var(--rep-bg);border-color:var(--rep-b);}
+.sn3{font-family:'Bebas Neue',sans-serif;font-size:16px;line-height:1;color:var(--text);}
+.si3{font-size:18px;line-height:1;}
+.sna{font-size:7px;color:var(--muted);text-align:center;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 2px;line-height:1.2;}
+.rb{position:absolute;top:-6px;right:-6px;background:var(--blue);color:#fff;font-size:9px;font-weight:700;font-family:'Barlow Condensed',sans-serif;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg);}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);z-index:300;display:none;align-items:center;justify-content:center;padding:20px;}
+.ov.open{display:flex;}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;width:320px;max-width:100%;box-shadow:0 40px 100px rgba(0,0,0,.7);animation:pop .2s cubic-bezier(.34,1.56,.64,1);}
+@keyframes pop{from{transform:scale(.88);opacity:0;}to{transform:scale(1);opacity:1;}}
+.mt{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:2px;}
+.mt2{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;margin-bottom:2px;}
+.mp{font-size:13px;color:var(--muted);margin-bottom:18px;}
+.ma{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;}
+.mb{padding:10px 6px;border:2px solid transparent;border-radius:10px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:5px;}
+.mb .mi{font-size:20px;}
+.hb{background:var(--have-bg);border-color:var(--have-b);color:var(--green);}
+.hb:hover,.hb.on{background:var(--green);color:#000;border-color:var(--green);}
+.nb{background:var(--need-bg);border-color:var(--need-b);color:var(--red);}
+.nb:hover,.nb.on{background:var(--red);color:#fff;border-color:var(--red);}
+.rpb{background:var(--rep-bg);border-color:var(--rep-b);color:var(--blue);}
+.rpb:hover,.rpb.on{background:var(--blue);color:#fff;border-color:var(--blue);}
+.rc{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px;}
+.rn{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--blue);min-width:36px;text-align:center;}
+.rcc{width:30px;height:30px;border-radius:50%;border:2px solid var(--blue);background:transparent;color:var(--blue);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.rcc:hover{background:var(--blue);color:#fff;}
+.mc{width:100%;padding:9px;background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:8px;cursor:pointer;font-family:'Barlow',sans-serif;font-size:13px;transition:all .15s;}
+.mc:hover{border-color:var(--red);color:var(--red);}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--surface);border:1px solid var(--gold);color:var(--gold);padding:9px 18px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;z-index:400;transition:transform .3s cubic-bezier(.34,1.56,.64,1);pointer-events:none;white-space:nowrap;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+.loading{display:flex;align-items:center;justify-content:center;height:200px;color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;}
+@media(max-width:600px){.grid{grid-template-columns:repeat(auto-fill,minmax(58px,1fr));gap:5px;}.lt{font-size:16px;}.sv{font-size:22px;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hi">
+    <div class="logo">
+      <span class="lb">⚽</span>
+      <div><div class="lt">Road to FIFA World Cup 2026</div><div class="ly">MI ÁLBUM PANINI</div></div>
+    </div>
+    <span class="sync-status sync-load" id="syncStatus">⏳ Conectando...</span>
+  </div>
+</header>
+<div class="sbar">
+  <div class="si">
+    <div class="stat st"><div class="sv" id="sT">0</div><div class="sl">Total</div></div>
+    <div class="sep"></div>
+    <div class="stat sh"><div class="sv" id="sH">0</div><div class="sl">Tengo</div></div>
+    <div class="sep"></div>
+    <div class="stat sn"><div class="sv" id="sN">0</div><div class="sl">Me falta</div></div>
+    <div class="sep"></div>
+    <div class="stat sr"><div class="sv" id="sR">0</div><div class="sl">Repetidas</div></div>
+    <div class="sep"></div>
+    <div class="pw">
+      <div class="pl"><span>Progreso</span><span id="pP">0%</span></div>
+      <div class="pb"><div class="pf" id="pF" style="width:0%"></div></div>
+    </div>
+  </div>
+</div>
+<div class="toolbar">
+  <div class="sw">
+    <span class="si2">🔍</span>
+    <input type="text" id="qry" placeholder="Buscar equipo, jugador o número..." oninput="render()">
+  </div>
+  <div class="fg">
+    <button class="fb on" onclick="setF('all',this)">Todas</button>
+    <button class="fb" onclick="setF('have',this)">✅ Tengo</button>
+    <button class="fb" onclick="setF('need',this)">❌ Falta</button>
+    <button class="fb" onclick="setF('repeat',this)">🔁 Repetida</button>
+  </div>
+</div>
+<div id="album"><div class="loading">CARGANDO ÁLBUM...</div></div>
+<div class="ov" id="ov" onclick="if(event.target===this)closeM()">
+  <div class="modal">
+    <div class="mt" id="mT"></div>
+    <div class="mt2" id="mT2"></div>
+    <div class="mp" id="mP"></div>
+    <div class="ma">
+      <button class="mb hb" onclick="setS('have')"><span class="mi">✅</span><span>La tengo</span></button>
+      <button class="mb nb" onclick="setS('need')"><span class="mi">❌</span><span>Me falta</span></button>
+      <button class="mb rpb" onclick="setS('repeat')"><span class="mi">🔁</span><span>Repetida</span></button>
+    </div>
+    <div class="rc" id="rc" style="display:none">
+      <button class="rcc" onclick="chgR(-1)">−</button>
+      <span class="rn" id="rn">2</span>
+      <button class="rcc" onclick="chgR(1)">+</button>
+    </div>
+    <button class="mc" onclick="closeM()">Cerrar</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const SUPABASE_URL = 'https://uolqbhrwktparqulyfwj.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_HfXVCb43QOWCf4KmK91B8g_jq4efHOt';
+const SECTIONS = [{"id": "FWC", "name": "FIFA World Cup 2026", "flag": "🏆", "players": {"1": "FIFA Logo", "2": "Trophy", "3": "Maple", "4": "Balón", "5": "Sede USA", "6": "Sede CAN", "7": "Sede MEX"}}, {"id": "PAN", "name": "Panamá", "flag": "🇵🇦", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "Andrade", "6": "Murillo", "7": "Jugador", "8": "Córdoba", "9": "Blackman", "10": "C. Martínez", "11": "Portero", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "C. Harvey", "16": "I. Díaz", "17": "Jugador", "18": "Wajterman", "19": "J. Rodríguez", "20": "Jugador"}}, {"id": "GHA", "name": "Ghana", "flag": "🇬🇭", "players": {"1": "Portero", "2": "Ati-Zigi", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "Djiku", "7": "Jugador", "8": "Ekuban", "9": "Issahaku", "10": "T. Partey", "11": "Kudus", "12": "Sulemana", "13": "Jugador", "14": "Salisu", "15": "J. Ayew", "16": "Jordan Ayew", "17": "Jugador", "18": "Paintsil", "19": "Jugador", "20": "A. Ayew"}}, {"id": "CRO", "name": "Croacia", "flag": "🇭🇷", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "Stanišić", "6": "Vušković", "7": "Bulat", "8": "Jakić", "9": "Modrić", "10": "Kovačić", "11": "Jugador", "12": "Majer", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Budimir", "19": "Jugador", "20": "Marović"}}, {"id": "ENG", "name": "Inglaterra", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "players": {"1": "Portero", "2": "Pickford", "3": "Jugador", "4": "Guehi", "5": "Konsa", "6": "Jugador", "7": "Jugador", "8": "D. Burn", "9": "Henderson", "10": "D. Rice", "11": "Bellingham", "12": "C. Palmer", "13": "Jugador", "14": "Jugador", "15": "A. Gordon", "16": "Jugador", "17": "Jugador", "18": "H. Kane", "19": "Jugador", "20": "O. Watkins"}}, {"id": "COL", "name": "Colombia", "flag": "🇨🇴", "players": {"1": "Portero", "2": "Jugador", "3": "Cuadrado", "4": "Jugador", "5": "Y. Mina", "6": "D. Muñoz", "7": "Molina", "8": "Lucumí", "9": "Jugador", "10": "J. Lerma", "11": "Castaño", "12": "R. Ríos", "13": "Jugador", "14": "J. Rodríguez", "15": "J.F. Quintero", "16": "Carrascal", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "UZB", "name": "Uzbekistán", "flag": "🇺🇿", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "Elbek", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Abdukodirov", "10": "Jugador", "11": "Jaloliddin", "12": "Iskanderov", "13": "Jugador", "14": "Yakhshiboev", "15": "Jugador", "16": "Shomirzoev", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Nasrullayev"}}, {"id": "COD", "name": "Congo DR", "flag": "🇨🇩", "players": {"1": "Portero", "2": "L. Mpasi", "3": "Jugador", "4": "Tunezbe", "5": "Masuaku", "6": "Mbemba", "7": "Jugador", "8": "Pickel", "9": "Mukau", "10": "Kayembe", "11": "Moutoussamy", "12": "Saibu", "13": "Jugador", "14": "Bongonda", "15": "M. Elia", "16": "Jugador", "17": "Cikela", "18": "Jugador", "19": "Katompa", "20": "Mugalu"}}, {"id": "POR", "name": "Portugal", "flag": "🇵🇹", "players": {"1": "Portero", "2": "D. Costa", "3": "José Sá", "4": "R. Dias", "5": "J. Cancelo", "6": "Jugador", "7": "Jugador", "8": "G. Inácio", "9": "B. Silva", "10": "Jugador", "11": "R. Leão", "12": "Vitinha", "13": "Jugador", "14": "G. Ramos", "15": "C. Ronaldo", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "JOR", "name": "Jordania", "flag": "🇯🇴", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Abu Hashish", "5": "Al-Arabi", "6": "A. Nasab", "7": "Jugador", "8": "Jugador", "9": "Bauder", "10": "Al-Rashdan", "11": "Al-Rawabdeh", "12": "Abu Taha", "13": "Jugador", "14": "Jugador", "15": "Al-Thaifiani", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Abu Zrayq", "20": "Jugador"}}, {"id": "AUT", "name": "Austria", "flag": "🇦🇹", "players": {"1": "Portero", "2": "A. Schlager", "3": "Danso", "4": "D. Alaba", "5": "K. Danso", "6": "Lienhart", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "X. Schlager", "11": "Jugador", "12": "R. Schmid", "13": "Jugador", "14": "Jugador", "15": "Seiwald", "16": "Jugador", "17": "Jugador", "18": "Baumgartner", "19": "Gregoritsch", "20": "Arnautovic"}}, {"id": "ALG", "name": "Argelia", "flag": "🇩🇿", "players": {"1": "Portero", "2": "Mbolhi", "3": "Jugador", "4": "Ayad", "5": "Jugador", "6": "Jugador", "7": "Jugador", "8": "Zerrouki", "9": "Atal", "10": "Bouarfa", "11": "Jugador", "12": "Mantlas", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Gobri", "19": "Jugador", "20": "Jugador"}}, {"id": "ARG", "name": "Argentina", "flag": "🇦🇷", "players": {"1": "Portero", "2": "Dibu Martínez", "3": "Jugador", "4": "Jugador", "5": "Pezzella", "6": "Tagliafico", "7": "Jugador", "8": "E. Fernández", "9": "Mac Allister", "10": "Jugador", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "V. González", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "NOR", "name": "Noruega", "flag": "🇳🇴", "players": {"1": "Portero", "2": "J. Ryerson", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Thorsby", "10": "M. Sørloth", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "IRQ", "name": "Iraq", "flag": "🇮🇶", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "H. Ali", "5": "J. Hasheem", "6": "M. Dosin", "7": "A. Tanner", "8": "A. Younis", "9": "A. Iqbal", "10": "Al-Hammari", "11": "I. Bayresh", "12": "A. Jabir", "13": "Jugador", "14": "Jugador", "15": "A. Emer", "16": "V. Faraju", "17": "Jugador", "18": "Jugador", "19": "B. Hussein", "20": "Jugador"}}, {"id": "SEN", "name": "Senegal", "flag": "🇸🇳", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "A. Seck", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Gana Gueye", "10": "P. Gueye", "11": "Jugador", "12": "Diarra", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "N. Jackson", "20": "Jugador"}}, {"id": "FRA", "name": "Francia", "flag": "🇫🇷", "players": {"1": "Portero", "2": "Jugador", "3": "L. Hernández", "4": "W. Saliba", "5": "J. Koundé", "6": "I. Konaté", "7": "Jugador", "8": "Jugador", "9": "Tchouaméni", "10": "Jugador", "11": "N. Koné", "12": "A. Rabiot", "13": "Jugador", "14": "M. Olise", "15": "O. Dembélé", "16": "B. Barcola", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "K. Mbappé"}}, {"id": "URU", "name": "Uruguay", "flag": "🇺🇾", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "J.M. Giménez", "6": "S. Cáceres", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "Jugador", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "M. Ugarte", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "KSA", "name": "Arabia Saudita", "flag": "🇸🇦", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "A. Hamid", "5": "Al-Boushal", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "Jugador", "11": "Al-Jobdi", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Al-Bahraji", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "CPV", "name": "Cabo Verde", "flag": "🇨🇻", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "Diney", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Sobreiro", "10": "K. Fynn", "11": "P. Andrade", "12": "J. Monteiro", "13": "Jugador", "14": "Jugador", "15": "D. Rodrigues", "16": "Casetal", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "ESP", "name": "España", "flag": "🇪🇸", "players": {"1": "Portero", "2": "Unai Simón", "3": "Jugador", "4": "Jugador", "5": "D. Huijsen", "6": "Jugador", "7": "Jugador", "8": "M. Cucurella", "9": "Zubimendi", "10": "Jugador", "11": "Pedri", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "N. Williams", "17": "Jugador", "18": "F. Torres", "19": "Jugador", "20": "Jugador"}}, {"id": "NZL", "name": "Nueva Zelanda", "flag": "🇳🇿", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "M. Boxall", "5": "Jugador", "6": "Jugador", "7": "Jugador", "8": "De Vries", "9": "Jugador", "10": "Jugador", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Garbett", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "E. Juut", "19": "McCartney", "20": "Jugador"}}, {"id": "IRN", "name": "Irán", "flag": "🇮🇷", "players": {"1": "Portero", "2": "Beiranvand", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "Jalilzadeh", "7": "Jugador", "8": "Jugador", "9": "Mohammadi", "10": "Jugador", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "M. Taremi", "19": "Jugador", "20": "Gholizadeh"}}, {"id": "EGY", "name": "Egipto", "flag": "🇪🇬", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "M. Hamdy", "5": "Jugador", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "H. Attia", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "BEL", "name": "Bélgica", "flag": "🇧🇪", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "J. Doku", "6": "B. Mechele", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "Jugador", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "K. De Bruyne", "16": "Jugador", "17": "Jugador", "18": "L. Trossard", "19": "L. Openda", "20": "R. Lukaku"}}, {"id": "TUN", "name": "Túnez", "flag": "🇹🇳", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "E. Skhiri", "10": "Laidouni", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "SWE", "name": "Suecia", "flag": "🇸🇪", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "A. Isak", "10": "Jugador", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "JPN", "name": "Japón", "flag": "🇯🇵", "players": {"1": "Portero", "2": "Z. Suzuki", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "Taniguchi", "7": "Jugador", "8": "Kano", "9": "Y. Soma", "10": "Jugador", "11": "D. Kamada", "12": "T. Kubo", "13": "Jugador", "14": "Jugador", "15": "Nakamura", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Ogawa", "20": "Jugador"}}, {"id": "NED", "name": "Países Bajos", "flag": "🇳🇱", "players": {"1": "Portero", "2": "M. Flekken", "3": "Jugador", "4": "Van de Ven", "5": "J. Timber", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "Jugador", "11": "Jugador", "12": "T. Koopmeiners", "13": "Jugador", "14": "B. De Gra.", "15": "X. Simons", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "ECU", "name": "Ecuador", "flag": "🇪🇨", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "P. Estupiñán", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "A. Franco", "11": "G. Plata", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "A. Minda", "19": "K. Rodríguez", "20": "Jugador"}}, {"id": "CIV", "name": "Costa de Marfil", "flag": "🇨🇮", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "E. Ndicka", "7": "Jugador", "8": "Aboubakar", "9": "Jugador", "10": "F. Kessié", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Diomandé", "19": "Jugador", "20": "Jugador"}}, {"id": "CUW", "name": "Curazao", "flag": "🏝️", "players": {"1": "Portero", "2": "E. Room", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "Jugador", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "GER", "name": "Alemania", "flag": "🇩🇪", "players": {"1": "Portero", "2": "Ter Stegen", "3": "Jugador", "4": "D. Raum", "5": "Jugador", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "Jugador", "11": "F. Wirtz", "12": "F. Nmecha", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "J. Musiala", "18": "L. Sané", "19": "K. Adeyemi", "20": "Jugador"}}, {"id": "TUR", "name": "Turquía", "flag": "🇹🇷", "players": {"1": "Portero", "2": "Çakir", "3": "Jugador", "4": "Jugador", "5": "Bardakcı", "6": "Söyüncü", "7": "Jugador", "8": "Jugador", "9": "Yüksek", "10": "Yüksek", "11": "Çalhanoğlu", "12": "Kökcü", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "N. Aydın", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "AUS", "name": "Australia", "flag": "🇦🇺", "players": {"1": "Portero", "2": "M. Ryan", "3": "Jugador", "4": "H. Souttar", "5": "Garzati", "6": "J. Bos", "7": "Jugador", "8": "Jugador", "9": "L. Miller", "10": "M. Degenek", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "N. O'Neill", "15": "C. Metcalfe", "16": "J. Valenza", "17": "C. Goodwin", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "PAR", "name": "Paraguay", "flag": "🇵🇾", "players": {"1": "Portero", "2": "R. Fernández", "3": "Jugador", "4": "Jugador", "5": "F. Balbuena", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "Jugador", "11": "D. Bobadilla", "12": "Jugador", "13": "Jugador", "14": "J. Galarrón", "15": "Jugador", "16": "A. Garnero", "17": "Jugador", "18": "K. Sosa", "19": "Jugador", "20": "Jugador"}}, {"id": "USA", "name": "Estados Unidos", "flag": "🇺🇸", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "M. McKenzie", "6": "A. Freeman", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "Jugador", "11": "Jugador", "12": "T. Weah", "13": "Jugador", "14": "D. Luna", "15": "M. Tillman", "16": "Jugador", "17": "Jugador", "18": "R. Pepi", "19": "Jugador", "20": "Jugador"}}, {"id": "SCO", "name": "Escocia", "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "players": {"1": "Portero", "2": "L. Kelly", "3": "Jugador", "4": "K. Tierney", "5": "Jugador", "6": "A. Robertson", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "G. Hanley", "11": "McTominay", "12": "B. Gilmour", "13": "Jugador", "14": "L. Porteous", "15": "R. Christie", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "C. Adams", "20": "Jugador"}}, {"id": "MAR", "name": "Marruecos", "flag": "🇲🇦", "players": {"1": "Portero", "2": "Y. Bounou", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "R. Saïss", "7": "Jugador", "8": "Jugador", "9": "A. Ounahi", "10": "Jugador", "11": "Ounahi", "12": "Jugador", "13": "Jugador", "14": "El Khannouss", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "S. Diaz", "20": "Jugador"}}, {"id": "BRA", "name": "Brasil", "flag": "🇧🇷", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "É. Militão", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "Casemiro", "11": "B. Guimarães", "12": "L. Henrique", "13": "Jugador", "14": "Vinícius Jr.", "15": "Rodrygo", "16": "João Pedro", "17": "Jugador", "18": "Jugador", "19": "Endrick", "20": "Estêvão"}}, {"id": "SUI", "name": "Suiza", "flag": "🇨🇭", "players": {"1": "Portero", "2": "G. Kobel", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "N. Elvedi", "7": "Jugador", "8": "A. Widmer", "9": "G. Xhaka", "10": "D. Zakaria", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "J. Monteiro", "16": "M. Aebischer", "17": "Jugador", "18": "R. Vargas", "19": "D. Ndoye", "20": "Jugador"}}, {"id": "QAT", "name": "Qatar", "flag": "🇶🇦", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "H. Ahmed", "6": "A. Kaoulah", "7": "Jugador", "8": "T. Salman", "9": "Jugador", "10": "Jugador", "11": "Almoez Ali", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "BIH", "name": "Bosnia-Herzegovina", "flag": "🇧🇦", "players": {"1": "Portero", "2": "N. Vasilj", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "M. Mladic", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "Jugador", "11": "Jugador", "12": "Samardžić", "13": "Jugador", "14": "Jugador", "15": "Bajraktarević", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "CAN", "name": "Canadá", "flag": "🇨🇦", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "Jugador", "11": "Jugador", "12": "Jugador", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "Jugador", "17": "T. Buchanan", "18": "L. Millar", "19": "Jugador", "20": "Jugador"}}, {"id": "CZE", "name": "Chequia", "flag": "🇨🇿", "players": {"1": "Portero", "2": "M. Novák", "3": "Jugador", "4": "Jugador", "5": "V. Coufal", "6": "J. Zeleny", "7": "Jugador", "8": "Jugador", "9": "M. Sadílek", "10": "L. Provod", "11": "L. Cerný", "12": "T. Souček", "13": "Jugador", "14": "Jugador", "15": "M. Vydra", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "KOR", "name": "Corea del Sur", "flag": "🇰🇷", "players": {"1": "Portero", "2": "Jo Hyeon-woo", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "Seol", "7": "Jugador", "8": "Jugador", "9": "Jae-sung Lee", "10": "Jaesung", "11": "H. Hwang", "12": "Jugador", "13": "Jugador", "14": "B. Park", "15": "Jugador", "16": "Jugador", "17": "Jugador", "18": "Jugador", "19": "Jugador", "20": "Jugador"}}, {"id": "RSA", "name": "Sudáfrica", "flag": "🇿🇦", "players": {"1": "Portero", "2": "Jugador", "3": "Jugador", "4": "Jugador", "5": "Jugador", "6": "Jugador", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "N. Sibisi", "11": "T. Mokoena", "12": "T. Nhadhla", "13": "Jugador", "14": "Jugador", "15": "Jugador", "16": "J. Minale", "17": "J. Porter", "18": "K. Dolly", "19": "Jugador", "20": "Jugador"}}, {"id": "MEX", "name": "México", "flag": "🇲🇽", "players": {"1": "Portero", "2": "Jugador", "3": "C. Montes", "4": "Jugador", "5": "Jugador", "6": "J. Quiñones", "7": "Jugador", "8": "Jugador", "9": "Jugador", "10": "E. Álvarez", "11": "O. Pineda", "12": "Jugador", "13": "Jugador", "14": "E. Sánchez", "15": "Jugador", "16": "Jugador", "17": "R. Jiménez", "18": "A. Vega", "19": "R. Alvarado", "20": "Jugador"}}];
+const INIT_STATE = {"PAN_1": "need", "PAN_2": "need", "PAN_3": "need", "PAN_4": "need", "PAN_5": "need", "PAN_6": "have", "PAN_7": "need", "PAN_8": "need", "PAN_9": "need", "PAN_10": "need", "PAN_11": "have", "PAN_12": "have", "PAN_13": "need", "PAN_14": "need", "PAN_15": "need", "PAN_16": "need", "PAN_17": "need", "PAN_18": "need", "PAN_19": "need", "PAN_20": "need", "GHA_1": "need", "GHA_2": "need", "GHA_3": "need", "GHA_4": "need", "GHA_5": "need", "GHA_6": "need", "GHA_7": "need", "GHA_8": "need", "GHA_9": "need", "GHA_10": "need", "GHA_11": "have", "GHA_12": "need", "GHA_13": "need", "GHA_14": "need", "GHA_15": "have", "GHA_16": "have", "GHA_17": "need", "GHA_18": "need", "GHA_19": "need", "GHA_20": "need", "CRO_1": "need", "CRO_2": "need", "CRO_3": "need", "CRO_4": "need", "CRO_5": "need", "CRO_6": "need", "CRO_7": "need", "CRO_8": "need", "CRO_9": "need", "CRO_10": "need", "CRO_11": "have", "CRO_12": "need", "CRO_13": "have", "CRO_14": "need", "CRO_15": "have", "CRO_16": "have", "CRO_17": "need", "CRO_18": "need", "CRO_19": "need", "CRO_20": "need", "ENG_1": "have", "ENG_2": "have", "ENG_3": "need", "ENG_4": "need", "ENG_5": "need", "ENG_6": "need", "ENG_7": "need", "ENG_8": "need", "ENG_9": "need", "ENG_10": "need", "ENG_11": "have", "ENG_12": "need", "ENG_13": "need", "ENG_14": "need", "ENG_15": "need", "ENG_16": "need", "ENG_17": "need", "ENG_18": "need", "ENG_19": "need", "ENG_20": "need", "COL_1": "need", "COL_2": "need", "COL_3": "need", "COL_4": "need", "COL_5": "need", "COL_6": "have", "COL_7": "need", "COL_8": "need", "COL_9": "have", "COL_10": "need", "COL_11": "need", "COL_12": "need", "COL_13": "need", "COL_14": "need", "COL_15": "need", "COL_16": "need", "COL_17": "need", "COL_18": "have", "COL_19": "need", "COL_20": "need", "UZB_1": "have", "UZB_2": "have", "UZB_3": "have", "UZB_4": "have", "UZB_5": "need", "UZB_6": "need", "UZB_7": "have", "UZB_8": "need", "UZB_9": "need", "UZB_10": "need", "UZB_11": "need", "UZB_12": "have", "UZB_13": "need", "UZB_14": "need", "UZB_15": "need", "UZB_16": "have", "UZB_17": "need", "UZB_18": "need", "UZB_19": "need", "UZB_20": "need", "COD_1": "need", "COD_2": "need", "COD_3": "need", "COD_4": "need", "COD_5": "need", "COD_6": "need", "COD_7": "need", "COD_8": "need", "COD_9": "need", "COD_10": "need", "COD_11": "need", "COD_12": "need", "COD_13": "need", "COD_14": "need", "COD_15": "need", "COD_16": "need", "COD_17": "have", "COD_18": "need", "COD_19": "need", "COD_20": "need", "POR_1": "have", "POR_2": "need", "POR_3": "need", "POR_4": "need", "POR_5": "need", "POR_6": "need", "POR_7": "need", "POR_8": "need", "POR_9": "have", "POR_10": "have", "POR_11": "have", "POR_12": "need", "POR_13": "need", "POR_14": "have", "POR_15": "need", "POR_16": "have", "POR_17": "have", "POR_18": "have", "POR_19": "have", "POR_20": "have", "JOR_1": "need", "JOR_2": "need", "JOR_3": "need", "JOR_4": "need", "JOR_5": "need", "JOR_6": "have", "JOR_7": "need", "JOR_8": "need", "JOR_9": "need", "JOR_10": "need", "JOR_11": "need", "JOR_12": "need", "JOR_13": "need", "JOR_14": "need", "JOR_15": "have", "JOR_16": "need", "JOR_17": "need", "JOR_18": "need", "JOR_19": "have", "JOR_20": "have", "AUT_1": "have", "AUT_2": "have", "AUT_3": "need", "AUT_4": "need", "AUT_5": "have", "AUT_6": "need", "AUT_7": "need", "AUT_8": "need", "AUT_9": "need", "AUT_10": "need", "AUT_11": "need", "AUT_12": "need", "AUT_13": "need", "AUT_14": "need", "AUT_15": "need", "AUT_16": "need", "AUT_17": "need", "AUT_18": "need", "AUT_19": "have", "AUT_20": "have", "ALG_1": "need", "ALG_2": "have", "ALG_3": "need", "ALG_4": "need", "ALG_5": "need", "ALG_6": "need", "ALG_7": "need", "ALG_8": "need", "ALG_9": "need", "ALG_10": "have", "ALG_11": "have", "ALG_12": "need", "ALG_13": "need", "ALG_14": "need", "ALG_15": "need", "ALG_16": "need", "ALG_17": "need", "ALG_18": "need", "ALG_19": "need", "ALG_20": "need", "ARG_1": "need", "ARG_2": "need", "ARG_3": "need", "ARG_4": "need", "ARG_5": "need", "ARG_6": "have", "ARG_7": "need", "ARG_8": "need", "ARG_9": "need", "ARG_10": "need", "ARG_11": "need", "ARG_12": "need", "ARG_13": "need", "ARG_14": "need", "ARG_15": "have", "ARG_16": "have", "ARG_17": "need", "ARG_18": "need", "ARG_19": "need", "ARG_20": "have", "NOR_1": "need", "NOR_2": "have", "NOR_3": "need", "NOR_4": "have", "NOR_5": "need", "NOR_6": "need", "NOR_7": "need", "NOR_8": "need", "NOR_9": "need", "NOR_10": "have", "NOR_11": "need", "NOR_12": "need", "NOR_13": "need", "NOR_14": "need", "NOR_15": "have", "NOR_16": "have", "NOR_17": "need", "NOR_18": "need", "NOR_19": "need", "NOR_20": "need", "IRQ_1": "need", "IRQ_2": "need", "IRQ_3": "need", "IRQ_4": "need", "IRQ_5": "need", "IRQ_6": "need", "IRQ_7": "need", "IRQ_8": "need", "IRQ_9": "need", "IRQ_10": "need", "IRQ_11": "need", "IRQ_12": "need", "IRQ_13": "need", "IRQ_14": "need", "IRQ_15": "need", "IRQ_16": "need", "IRQ_17": "need", "IRQ_18": "need", "IRQ_19": "need", "IRQ_20": "need", "SEN_1": "need", "SEN_2": "need", "SEN_3": "have", "SEN_4": "have", "SEN_5": "need", "SEN_6": "need", "SEN_7": "need", "SEN_8": "need", "SEN_9": "need", "SEN_10": "have", "SEN_11": "need", "SEN_12": "need", "SEN_13": "need", "SEN_14": "need", "SEN_15": "have", "SEN_16": "need", "SEN_17": "need", "SEN_18": "need", "SEN_19": "need", "SEN_20": "need", "FRA_1": "have", "FRA_2": "have", "FRA_3": "need", "FRA_4": "need", "FRA_5": "need", "FRA_6": "have", "FRA_7": "need", "FRA_8": "have", "FRA_9": "need", "FRA_10": "need", "FRA_11": "need", "FRA_12": "need", "FRA_13": "need", "FRA_14": "need", "FRA_15": "need", "FRA_16": "need", "FRA_17": "need", "FRA_18": "need", "FRA_19": "need", "FRA_20": "need", "URU_1": "have", "URU_2": "have", "URU_3": "need", "URU_4": "need", "URU_5": "need", "URU_6": "have", "URU_7": "need", "URU_8": "need", "URU_9": "have", "URU_10": "need", "URU_11": "have", "URU_12": "have", "URU_13": "need", "URU_14": "need", "URU_15": "have", "URU_16": "have", "URU_17": "need", "URU_18": "need", "URU_19": "need", "URU_20": "need", "KSA_1": "have", "KSA_2": "need", "KSA_3": "need", "KSA_4": "have", "KSA_5": "need", "KSA_6": "need", "KSA_7": "need", "KSA_8": "need", "KSA_9": "need", "KSA_10": "have", "KSA_11": "need", "KSA_12": "need", "KSA_13": "need", "KSA_14": "need", "KSA_15": "have", "KSA_16": "have", "KSA_17": "have", "KSA_18": "need", "KSA_19": "have", "KSA_20": "have", "CPV_1": "need", "CPV_2": "have", "CPV_3": "need", "CPV_4": "need", "CPV_5": "need", "CPV_6": "need", "CPV_7": "need", "CPV_8": "need", "CPV_9": "need", "CPV_10": "need", "CPV_11": "have", "CPV_12": "need", "CPV_13": "need", "CPV_14": "need", "CPV_15": "need", "CPV_16": "need", "CPV_17": "need", "CPV_18": "need", "CPV_19": "need", "CPV_20": "need", "ESP_1": "need", "ESP_2": "need", "ESP_3": "need", "ESP_4": "need", "ESP_5": "need", "ESP_6": "need", "ESP_7": "need", "ESP_8": "need", "ESP_9": "need", "ESP_10": "have", "ESP_11": "have", "ESP_12": "need", "ESP_13": "need", "ESP_14": "need", "ESP_15": "have", "ESP_16": "need", "ESP_17": "need", "ESP_18": "need", "ESP_19": "have", "ESP_20": "have", "NZL_1": "need", "NZL_2": "need", "NZL_3": "need", "NZL_4": "need", "NZL_5": "need", "NZL_6": "need", "NZL_7": "need", "NZL_8": "need", "NZL_9": "need", "NZL_10": "have", "NZL_11": "need", "NZL_12": "need", "NZL_13": "need", "NZL_14": "need", "NZL_15": "have", "NZL_16": "have", "NZL_17": "need", "NZL_18": "need", "NZL_19": "need", "NZL_20": "need", "IRN_1": "need", "IRN_2": "need", "IRN_3": "need", "IRN_4": "need", "IRN_5": "need", "IRN_6": "have", "IRN_7": "need", "IRN_8": "need", "IRN_9": "need", "IRN_10": "need", "IRN_11": "need", "IRN_12": "need", "IRN_13": "need", "IRN_14": "need", "IRN_15": "have", "IRN_16": "have", "IRN_17": "need", "IRN_18": "need", "IRN_19": "have", "IRN_20": "have", "EGY_1": "need", "EGY_2": "need", "EGY_3": "need", "EGY_4": "have", "EGY_5": "need", "EGY_6": "need", "EGY_7": "need", "EGY_8": "have", "EGY_9": "have", "EGY_10": "need", "EGY_11": "have", "EGY_12": "need", "EGY_13": "need", "EGY_14": "need", "EGY_15": "need", "EGY_16": "need", "EGY_17": "need", "EGY_18": "need", "EGY_19": "have", "EGY_20": "have", "BEL_1": "have", "BEL_2": "have", "BEL_3": "need", "BEL_4": "need", "BEL_5": "need", "BEL_6": "have", "BEL_7": "have", "BEL_8": "need", "BEL_9": "have", "BEL_10": "need", "BEL_11": "have", "BEL_12": "have", "BEL_13": "need", "BEL_14": "need", "BEL_15": "need", "BEL_16": "need", "BEL_17": "need", "BEL_18": "need", "BEL_19": "need", "BEL_20": "need", "TUN_1": "need", "TUN_2": "need", "TUN_3": "need", "TUN_4": "need", "TUN_5": "need", "TUN_6": "need", "TUN_7": "have", "TUN_8": "need", "TUN_9": "need", "TUN_10": "need", "TUN_11": "need", "TUN_12": "need", "TUN_13": "need", "TUN_14": "need", "TUN_15": "have", "TUN_16": "need", "TUN_17": "have", "TUN_18": "need", "TUN_19": "have", "TUN_20": "have", "SWE_1": "need", "SWE_2": "need", "SWE_3": "need", "SWE_4": "need", "SWE_5": "need", "SWE_6": "need", "SWE_7": "need", "SWE_8": "need", "SWE_9": "have", "SWE_10": "need", "SWE_11": "need", "SWE_12": "need", "SWE_13": "need", "SWE_14": "need", "SWE_15": "have", "SWE_16": "need", "SWE_17": "need", "SWE_18": "need", "SWE_19": "need", "SWE_20": "need", "JPN_1": "have", "JPN_2": "need", "JPN_3": "need", "JPN_4": "need", "JPN_5": "need", "JPN_6": "need", "JPN_7": "need", "JPN_8": "need", "JPN_9": "need", "JPN_10": "have", "JPN_11": "need", "JPN_12": "need", "JPN_13": "need", "JPN_14": "need", "JPN_15": "need", "JPN_16": "need", "JPN_17": "have", "JPN_18": "need", "JPN_19": "have", "JPN_20": "have", "NED_1": "have", "NED_2": "need", "NED_3": "have", "NED_4": "need", "NED_5": "need", "NED_6": "have", "NED_7": "have", "NED_8": "have", "NED_9": "have", "NED_10": "need", "NED_11": "have", "NED_12": "need", "NED_13": "need", "NED_14": "need", "NED_15": "need", "NED_16": "need", "NED_17": "need", "NED_18": "need", "NED_19": "need", "NED_20": "need", "ECU_1": "need", "ECU_2": "need", "ECU_3": "need", "ECU_4": "need", "ECU_5": "need", "ECU_6": "have", "ECU_7": "need", "ECU_8": "have", "ECU_9": "have", "ECU_10": "need", "ECU_11": "need", "ECU_12": "need", "ECU_13": "need", "ECU_14": "need", "ECU_15": "need", "ECU_16": "need", "ECU_17": "need", "ECU_18": "need", "ECU_19": "have", "ECU_20": "have", "CIV_1": "have", "CIV_2": "need", "CIV_3": "have", "CIV_4": "need", "CIV_5": "need", "CIV_6": "need", "CIV_7": "have", "CIV_8": "need", "CIV_9": "have", "CIV_10": "need", "CIV_11": "need", "CIV_12": "need", "CIV_13": "need", "CIV_14": "have", "CIV_15": "have", "CIV_16": "need", "CIV_17": "need", "CIV_18": "need", "CIV_19": "have", "CIV_20": "need", "CUW_1": "have", "CUW_2": "need", "CUW_3": "need", "CUW_4": "need", "CUW_5": "have", "CUW_6": "have", "CUW_7": "need", "CUW_8": "need", "CUW_9": "need", "CUW_10": "need", "CUW_11": "have", "CUW_12": "need", "CUW_13": "need", "CUW_14": "need", "CUW_15": "need", "CUW_16": "need", "CUW_17": "need", "CUW_18": "have", "CUW_19": "have", "CUW_20": "have", "GER_1": "need", "GER_2": "need", "GER_3": "need", "GER_4": "need", "GER_5": "need", "GER_6": "need", "GER_7": "have", "GER_8": "need", "GER_9": "need", "GER_10": "need", "GER_11": "need", "GER_12": "need", "GER_13": "need", "GER_14": "need", "GER_15": "have", "GER_16": "have", "GER_17": "need", "GER_18": "need", "GER_19": "have", "GER_20": "have", "TUR_1": "need", "TUR_2": "need", "TUR_3": "need", "TUR_4": "need", "TUR_5": "need", "TUR_6": "need", "TUR_7": "need", "TUR_8": "need", "TUR_9": "need", "TUR_10": "need", "TUR_11": "need", "TUR_12": "need", "TUR_13": "need", "TUR_14": "need", "TUR_15": "need", "TUR_16": "need", "TUR_17": "need", "TUR_18": "need", "TUR_19": "need", "TUR_20": "need", "AUS_1": "need", "AUS_2": "have", "AUS_3": "need", "AUS_4": "need", "AUS_5": "need", "AUS_6": "need", "AUS_7": "need", "AUS_8": "need", "AUS_9": "need", "AUS_10": "need", "AUS_11": "have", "AUS_12": "need", "AUS_13": "need", "AUS_14": "need", "AUS_15": "have", "AUS_16": "need", "AUS_17": "have", "AUS_18": "need", "AUS_19": "need", "AUS_20": "need", "PAR_1": "need", "PAR_2": "need", "PAR_3": "need", "PAR_4": "need", "PAR_5": "need", "PAR_6": "have", "PAR_7": "need", "PAR_8": "need", "PAR_9": "need", "PAR_10": "need", "PAR_11": "need", "PAR_12": "need", "PAR_13": "need", "PAR_14": "need", "PAR_15": "have", "PAR_16": "have", "PAR_17": "have", "PAR_18": "need", "PAR_19": "have", "PAR_20": "have", "USA_1": "need", "USA_2": "have", "USA_3": "have", "USA_4": "have", "USA_5": "need", "USA_6": "have", "USA_7": "need", "USA_8": "need", "USA_9": "need", "USA_10": "need", "USA_11": "have", "USA_12": "need", "USA_13": "need", "USA_14": "need", "USA_15": "need", "USA_16": "need", "USA_17": "need", "USA_18": "need", "USA_19": "have", "USA_20": "need", "SCO_1": "need", "SCO_2": "need", "SCO_3": "need", "SCO_4": "need", "SCO_5": "have", "SCO_6": "need", "SCO_7": "need", "SCO_8": "have", "SCO_9": "have", "SCO_10": "need", "SCO_11": "need", "SCO_12": "need", "SCO_13": "need", "SCO_14": "need", "SCO_15": "need", "SCO_16": "need", "SCO_17": "need", "SCO_18": "need", "SCO_19": "have", "SCO_20": "need", "MAR_1": "need", "MAR_2": "have", "MAR_3": "have", "MAR_4": "need", "MAR_5": "need", "MAR_6": "have", "MAR_7": "need", "MAR_8": "need", "MAR_9": "need", "MAR_10": "need", "MAR_11": "have", "MAR_12": "need", "MAR_13": "need", "MAR_14": "have", "MAR_15": "need", "MAR_16": "need", "MAR_17": "need", "MAR_18": "need", "MAR_19": "need", "MAR_20": "need", "BRA_1": "need", "BRA_2": "need", "BRA_3": "need", "BRA_4": "need", "BRA_5": "have", "BRA_6": "need", "BRA_7": "need", "BRA_8": "have", "BRA_9": "have", "BRA_10": "need", "BRA_11": "need", "BRA_12": "need", "BRA_13": "need", "BRA_14": "need", "BRA_15": "need", "BRA_16": "need", "BRA_17": "need", "BRA_18": "need", "BRA_19": "need", "BRA_20": "have", "SUI_1": "need", "SUI_2": "have", "SUI_3": "need", "SUI_4": "need", "SUI_5": "need", "SUI_6": "need", "SUI_7": "need", "SUI_8": "need", "SUI_9": "need", "SUI_10": "need", "SUI_11": "need", "SUI_12": "need", "SUI_13": "need", "SUI_14": "need", "SUI_15": "have", "SUI_16": "need", "SUI_17": "need", "SUI_18": "need", "SUI_19": "need", "SUI_20": "need", "QAT_1": "need", "QAT_2": "need", "QAT_3": "have", "QAT_4": "have", "QAT_5": "need", "QAT_6": "have", "QAT_7": "need", "QAT_8": "need", "QAT_9": "need", "QAT_10": "need", "QAT_11": "need", "QAT_12": "have", "QAT_13": "need", "QAT_14": "need", "QAT_15": "have", "QAT_16": "need", "QAT_17": "need", "QAT_18": "need", "QAT_19": "need", "QAT_20": "need", "BIH_1": "need", "BIH_2": "need", "BIH_3": "need", "BIH_4": "need", "BIH_5": "need", "BIH_6": "need", "BIH_7": "need", "BIH_8": "need", "BIH_9": "have", "BIH_10": "need", "BIH_11": "have", "BIH_12": "need", "BIH_13": "need", "BIH_14": "need", "BIH_15": "need", "BIH_16": "need", "BIH_17": "need", "BIH_18": "need", "BIH_19": "need", "BIH_20": "need", "CAN_1": "need", "CAN_2": "have", "CAN_3": "have", "CAN_4": "have", "CAN_5": "have", "CAN_6": "have", "CAN_7": "need", "CAN_8": "have", "CAN_9": "have", "CAN_10": "need", "CAN_11": "have", "CAN_12": "have", "CAN_13": "have", "CAN_14": "have", "CAN_15": "have", "CAN_16": "have", "CAN_17": "need", "CAN_18": "need", "CAN_19": "have", "CAN_20": "have", "CZE_1": "need", "CZE_2": "need", "CZE_3": "need", "CZE_4": "need", "CZE_5": "need", "CZE_6": "need", "CZE_7": "need", "CZE_8": "need", "CZE_9": "need", "CZE_10": "need", "CZE_11": "have", "CZE_12": "have", "CZE_13": "need", "CZE_14": "need", "CZE_15": "need", "CZE_16": "need", "CZE_17": "need", "CZE_18": "need", "CZE_19": "need", "CZE_20": "need", "KOR_1": "need", "KOR_2": "have", "KOR_3": "have", "KOR_4": "have", "KOR_5": "have", "KOR_6": "have", "KOR_7": "need", "KOR_8": "need", "KOR_9": "need", "KOR_10": "need", "KOR_11": "need", "KOR_12": "need", "KOR_13": "need", "KOR_14": "need", "KOR_15": "have", "KOR_16": "need", "KOR_17": "need", "KOR_18": "need", "KOR_19": "need", "KOR_20": "need", "RSA_1": "need", "RSA_2": "have", "RSA_3": "need", "RSA_4": "have", "RSA_5": "have", "RSA_6": "have", "RSA_7": "have", "RSA_8": "have", "RSA_9": "have", "RSA_10": "need", "RSA_11": "have", "RSA_12": "have", "RSA_13": "have", "RSA_14": "need", "RSA_15": "need", "RSA_16": "need", "RSA_17": "need", "RSA_18": "need", "RSA_19": "need", "RSA_20": "need", "MEX_1": "need", "MEX_2": "have", "MEX_3": "need", "MEX_4": "need", "MEX_5": "need", "MEX_6": "need", "MEX_7": "have", "MEX_8": "need", "MEX_9": "need", "MEX_10": "need", "MEX_11": "need", "MEX_12": "need", "MEX_13": "need", "MEX_14": "need", "MEX_15": "need", "MEX_16": "have", "MEX_17": "need", "MEX_18": "need", "MEX_19": "have", "MEX_20": "have", "FWC_1": "have", "FWC_2": "have", "FWC_3": "have", "FWC_4": "have", "FWC_5": "need", "FWC_6": "need", "FWC_7": "have"};
+
+let state = {};
+let filter = 'all';
+let activeKey = null;
+let synced = false;
+
+// ── Supabase helpers ──────────────────────────────────────────
+async function sbFetch(path, method='GET', body=null) {
+  const opts = {
+    method,
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_KEY,
+      'Content-Type': 'application/json',
+      'Prefer': method === 'POST' ? 'resolution=merge-duplicates' : ''
+    }
+  };
+  if (body) opts.body = JSON.stringify(body);
+  const r = await fetch(SUPABASE_URL + '/rest/v1/' + path, opts);
+  if (!r.ok) throw new Error(await r.text());
+  return method === 'GET' ? r.json() : r;
+}
+
+async function loadFromSupabase() {
+  setSyncStatus('load');
+  try {
+    const rows = await sbFetch('stickers?select=id,status,repeat_count');
+    if (rows.length === 0) {
+      // Primera vez: cargar estado inicial y subir todo
+      await initAndUpload();
+    } else {
+      state = {};
+      rows.forEach(r => {
+        state[r.id] = { status: r.status, repeatCount: r.repeat_count || 2 };
+      });
+      // Fill any missing keys from INIT_STATE
+      for (const [k, v] of Object.entries(INIT_STATE)) {
+        if (!state[k]) state[k] = { status: v, repeatCount: 2 };
+      }
+      setSyncStatus('ok');
+    }
+  } catch(e) {
+    console.error('Supabase load error:', e);
+    // Fallback to localStorage
+    const ls = localStorage.getItem('panini2026_fallback');
+    if (ls) { try { state = JSON.parse(ls); } catch(_) { initLocal(); } }
+    else initLocal();
+    setSyncStatus('err');
+  }
+  render();
+}
+
+async function initAndUpload() {
+  initLocal();
+  setSyncStatus('load');
+  try {
+    const rows = Object.entries(INIT_STATE).map(([id, status]) => ({
+      id, status, repeat_count: 2
+    }));
+    // Upload in batches of 200
+    for (let i = 0; i < rows.length; i += 200) {
+      await sbFetch('stickers', 'POST', rows.slice(i, i+200));
+    }
+    setSyncStatus('ok');
+  } catch(e) {
+    console.error('Upload error:', e);
+    setSyncStatus('err');
+  }
+}
+
+async function saveToSupabase(key, status, repeatCount) {
+  try {
+    await sbFetch('stickers', 'POST', [{
+      id: key,
+      status: status,
+      repeat_count: repeatCount,
+      updated_at: new Date().toISOString()
+    }]);
+    setSyncStatus('ok');
+    // Also save to localStorage as backup
+    localStorage.setItem('panini2026_fallback', JSON.stringify(state));
+  } catch(e) {
+    console.error('Save error:', e);
+    setSyncStatus('err');
+    localStorage.setItem('panini2026_fallback', JSON.stringify(state));
+  }
+}
+
+function initLocal() {
+  state = {};
+  for (const [k, v] of Object.entries(INIT_STATE)) {
+    state[k] = { status: v, repeatCount: 2 };
+  }
+}
+
+function setSyncStatus(s) {
+  const el = document.getElementById('syncStatus');
+  if (s === 'ok') { el.className='sync-status sync-ok'; el.textContent='☁️ Sincronizado'; }
+  else if (s === 'err') { el.className='sync-status sync-err'; el.textContent='⚠️ Sin conexión'; }
+  else { el.className='sync-status sync-load'; el.textContent='⏳ Sincronizando...'; }
+}
+
+// ── UI ────────────────────────────────────────────────────────
+function getS(k) { return state[k] || { status: 'need', repeatCount: 2 }; }
+
+function updateStats() {
+  let total=0,have=0,need=0,rep=0;
+  SECTIONS.forEach(sec => Object.keys(sec.players).forEach(n => {
+    total++;
+    const st = getS(sec.id+'_'+n).status;
+    if(st==='have') have++;
+    else if(st==='repeat'){have++;rep++;}
+    else need++;
+  }));
+  document.getElementById('sT').textContent=total;
+  document.getElementById('sH').textContent=have;
+  document.getElementById('sN').textContent=need;
+  document.getElementById('sR').textContent=rep;
+  const pct=total?Math.round(have/total*100):0;
+  document.getElementById('pP').textContent=pct+'%';
+  document.getElementById('pF').style.width=pct+'%';
+}
+
+function setF(f,btn) {
+  filter=f;
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  render();
+}
+
+function render() {
+  const q=document.getElementById('qry').value.toLowerCase().trim();
+  const album=document.getElementById('album');
+  album.innerHTML='';
+  SECTIONS.forEach(sec => {
+    const stickers=Object.entries(sec.players).map(([n,nm])=>({key:sec.id+'_'+n,num:parseInt(n),name:nm,sec}));
+    const filtered=stickers.filter(s=>{
+      const st=getS(s.key).status;
+      const fOk=filter==='all'||st===filter;
+      const qOk=!q||String(s.num).includes(q)||s.name.toLowerCase().includes(q)||sec.name.toLowerCase().includes(q)||sec.id.toLowerCase().includes(q);
+      return fOk&&qOk;
+    });
+    if(!filtered.length) return;
+    const tot=stickers.length;
+    const hv=stickers.filter(s=>['have','repeat'].includes(getS(s.key).status)).length;
+    const pct=Math.round(hv/tot*100);
+    const d=document.createElement('div');
+    d.className='sec';
+    d.innerHTML=`
+      <div class="sh2" onclick="toggleS('${sec.id}')">
+        <span class="sf">${sec.flag}</span>
+        <span class="sn2">${sec.name}</span>
+        <div class="smb">
+          <div style="display:flex;justify-content:space-between">
+            <span class="sp">${hv}/${tot}</span><span class="sp">${pct}%</span>
+          </div>
+          <div class="smt"><div class="smf" style="width:${pct}%"></div></div>
+        </div>
+        <span class="sbg">${filtered.length} estampas</span>
+        <span class="sar" id="ar-${sec.id}">▾</span>
+      </div>
+      <div class="grid" id="gr-${sec.id}">
+        ${filtered.map(s=>renderStk(s)).join('')}
+      </div>`;
+    album.appendChild(d);
+  });
+  updateStats();
+}
+
+function renderStk(s) {
+  const st=getS(s.key);
+  const icons={have:'✅',need:'❌',repeat:'🔁'};
+  const badge=st.status==='repeat'?`<div class="rb">${st.repeatCount||2}</div>`:'';
+  return `<div class="stk ${st.status}" onclick="openM('${s.key}','${s.sec.name}','${s.sec.flag}',${s.num},'${s.name.replace(/'/g,"\\'")}')">
+    ${badge}
+    <span class="sn3">${s.sec.id} ${s.num}</span>
+    <span class="si3">${icons[st.status]}</span>
+    <span class="sna">${s.name}</span>
+  </div>`;
+}
+
+function toggleS(id) {
+  document.getElementById('gr-'+id).classList.toggle('hidden');
+  document.getElementById('ar-'+id).classList.toggle('col');
+}
+
+function openM(key,team,flag,num,player) {
+  activeKey=key;
+  const st=getS(key);
+  document.getElementById('mT').textContent=flag+' '+team;
+  document.getElementById('mT2').textContent='#'+String(num).padStart(3,'0');
+  document.getElementById('mP').textContent=player;
+  document.getElementById('rn').textContent=st.repeatCount||2;
+  document.querySelectorAll('.mb').forEach(b=>b.classList.remove('on'));
+  const map={have:'.hb',need:'.nb',repeat:'.rpb'};
+  document.querySelector(map[st.status||'need'])?.classList.add('on');
+  document.getElementById('rc').style.display=st.status==='repeat'?'flex':'none';
+  document.getElementById('ov').classList.add('open');
+}
+
+function closeM() {
+  document.getElementById('ov').classList.remove('open');
+  activeKey=null;
+}
+
+function setS(status) {
+  if(!activeKey) return;
+  const prev=getS(activeKey);
+  const rc = prev.repeatCount||2;
+  state[activeKey]={status,repeatCount:rc};
+  document.querySelectorAll('.mb').forEach(b=>b.classList.remove('on'));
+  document.querySelector(status==='have'?'.hb':status==='need'?'.nb':'.rpb')?.classList.add('on');
+  document.getElementById('rc').style.display=status==='repeat'?'flex':'none';
+  render();
+  const msgs={have:'✅ Marcada como obtenida',need:'❌ Marcada como faltante',repeat:'🔁 Marcada como repetida'};
+  showToast(msgs[status]);
+  setSyncStatus('load');
+  saveToSupabase(activeKey, status, rc);
+}
+
+function chgR(d) {
+  if(!activeKey) return;
+  const st=state[activeKey]||{status:'repeat',repeatCount:2};
+  st.repeatCount=Math.max(2,(st.repeatCount||2)+d);
+  state[activeKey]=st;
+  document.getElementById('rn').textContent=st.repeatCount;
+  render();
+  saveToSupabase(activeKey, st.status, st.repeatCount);
+}
+
+function showToast(msg) {
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+// ── Init ──────────────────────────────────────────────────────
+loadFromSupabase();
+</script>
+</body>
+</html>
